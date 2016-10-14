@@ -5,7 +5,7 @@ import django
 from .managers import safedelete_manager_factory
 from .utils import (related_objects,
                     HARD_DELETE, SOFT_DELETE, HARD_DELETE_NOCASCADE, NO_DELETE,
-                    DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK)
+                    DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK, DELETED_VISIBLE)
 
 
 def safedelete_mixin_factory(policy,
