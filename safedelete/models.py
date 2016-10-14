@@ -34,7 +34,7 @@ def safedelete_mixin_factory(policy,
 
     assert policy in (HARD_DELETE, SOFT_DELETE, HARD_DELETE_NOCASCADE,
                       NO_DELETE)
-    assert visibility in (DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK)
+    assert visibility in (DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK, DELETED_VISIBLE)
 
     class Model(models.Model):
 
