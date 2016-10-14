@@ -9,7 +9,7 @@ def safedelete_manager_factory(manager_superclass, queryset_superclass, visibili
     objects if they are accessed by primary key.
     """
 
-    assert visibility in (DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK)
+    assert visibility in (DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK,DELETED_VISIBLE)
 
     class SafeDeleteQueryset(queryset_superclass):
         def delete(self):
