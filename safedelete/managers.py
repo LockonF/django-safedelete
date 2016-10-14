@@ -70,7 +70,8 @@ def safedelete_manager_factory(manager_superclass, queryset_superclass, visibili
             return self.get_queryset().filter(*args, **kwargs)
 
         def get(self, *args, **kwargs):
-            if visibility == DELETED_VISIBLE_BY_PK and 'pk' in kwargs:
+            
+            if (visibility == DELETED_VISIBLE_BY_PK or visibility==DELETED_VISIBLE) and 'pk' in kwargs:
                 return self.all_with_deleted().get(*args, **kwargs)
             return self.get_queryset().get(*args, **kwargs)
 
