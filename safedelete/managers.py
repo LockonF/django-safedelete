@@ -1,4 +1,4 @@
-from .utils import DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK
+from .utils import DELETED_INVISIBLE, DELETED_VISIBLE_BY_PK, DELETED_VISIBLE
 
 
 def safedelete_manager_factory(manager_superclass, queryset_superclass, visibility=DELETED_INVISIBLE):
@@ -64,6 +64,9 @@ def safedelete_manager_factory(manager_superclass, queryset_superclass, visibili
         def filter(self, *args, **kwargs):
             if visibility == DELETED_VISIBLE_BY_PK and 'pk' in kwargs:
                 return self.all_with_deleted().filter(*args, **kwargs)
+            if visibility == DELETED_VISIBLE:
+                return self.all_with_deleted().filter(*args, **kwargs)
+            
             return self.get_queryset().filter(*args, **kwargs)
 
         def get(self, *args, **kwargs):
