@@ -61,6 +61,9 @@ def safedelete_manager_factory(manager_superclass, queryset_superclass, visibili
             """ Return a queryset to only deleted objects. """
             return self.all_with_deleted().filter(deleted=True)
 
+        def all(self):
+            return self.all_with_deleted()
+
         def filter(self, *args, **kwargs):
             if visibility == DELETED_VISIBLE_BY_PK and 'pk' in kwargs:
                 return self.all_with_deleted().filter(*args, **kwargs)
