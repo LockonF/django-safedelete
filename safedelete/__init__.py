@@ -10,6 +10,8 @@ __all__ = ['safedelete_manager_factory',
            'HARD_DELETE', 'SOFT_DELETE',
            'HARD_DELETE_NOCASCADE',
            'DELETED_INVISIBLE',
-           'DELETED_VISIBLE_BY_PK']
+           'DELETED_VISIBLE_BY_PK',
+           'DELETED_VISIBLE'
+          ]
 
 __version__ = "0.3.4"
