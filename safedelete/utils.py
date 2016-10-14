@@ -17,6 +17,7 @@ NO_DELETE = 4
 
 DELETED_INVISIBLE = 10
 DELETED_VISIBLE_BY_PK = 11
+DELETED_VISIBLE = 12
 
 
 # FIXME: Normally we must be able to use the django Collector, not the NestedObject
